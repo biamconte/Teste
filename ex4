@@ -1,0 +1,11 @@
+faturamento=[{'uf':'SP','valor':67836.43},{'uf':'RJ','valor':36678.66},
+             {'uf':'MG','valor':29229.88},{'uf':'ES','valor':27165.48},{'uf':'Outros','valor':19849.53}
+             ]
+soma=0
+
+for i,v in enumerate(faturamento):
+    soma+=v['valor']
+for i,v in enumerate(faturamento):
+    percentual=v['valor']*100/soma
+    uf=v['uf']
+    print(f"O percentual de {uf} é igual a {percentual:.2f}% ")
