@@ -1,0 +1,31 @@
+import json
+from typing import List, Dict
+
+
+with open('dados.json',encoding='utf-8') as meu_json:
+    dados=json.load(meu_json)
+menor=99999
+maior=0
+tamanho=0
+numero=0
+soma=0
+for p in dados:
+    if p['valor'] < menor and p['valor'] >0:
+        menor=p['valor']
+print(f'O menor valor de faturamento ocorrido em um dia foi {menor}')
+for p in dados:
+    if p['valor']>maior:
+        maior = p['valor']
+print(f'O maior valor de faturamento ocorrido em um dia foi {maior}')
+
+for p in dados:
+    if p['valor']>0:
+        tamanho+=1
+        soma+= p['valor']
+
+media=soma/tamanho
+for i in dados:
+    if i['valor'] > media:
+        numero+=1
+
+print(f'O número de dias em que o faturamento diário foi maior que a média mensal foi: {numero}')
